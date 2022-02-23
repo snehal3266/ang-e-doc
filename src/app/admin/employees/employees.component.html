@@ -1,0 +1,78 @@
+<div id="wrapper">
+  <app-header></app-header>
+  <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+          <!-- Topbar -->
+          <app-topbar></app-topbar>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+              <!-- Page Heading -->
+              <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                  <h1 class="h3 mb-0 text-gray-800">Employees
+                  </h1>
+                  <a class="btn btn-sm btn-success pull-right" routerLink="/admin/employee/0">+ Employee</a>
+              </div>
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="card shadow mb-12">
+                          <div class="card-body">
+                              <div class="table-responsive">
+                                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                      <thead>
+                                          <tr>
+                                              <th>Action</th>
+                                              <th>No</th>
+                                              <th>Employee_id</th>
+                                              <th>Name</th>
+                                              <th>Gender</th>
+                                              <th>Birthdate</th>
+                                              <th>Address</th>
+                                              <th>Email</th>
+                                              <th>Mobile_no</th>
+                                              <th>Joining_date</th>
+                                              <th>Department_name</th>
+                                              <th>Releiving_date</th>
+                                              <th>Photocode</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let employee of employees;let i = index;">
+                                              <td>
+                                                  <a class="btn btn-sm btn-primary" routerLink="/admin/employee/{{ employee._id }}"><i class="fas fa-edit"></i></a>&nbsp;
+                                                  <button (click)="delete(employee._id)" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                              </td>
+                                              <td>{{ (i + 1) }}</td>
+                                              <td>{{ employee.employee_id }}</td>
+                                              <td>{{ employee.name }}</td>
+                                              <td>{{ employee.gender }}</td>
+                                              <td>{{ employee.birthdate }}</td>
+                                              <td>{{ employee.address }}</td>
+                                              <td>{{ employee.email }}</td>
+                                              <td>{{ employee.mobile_no }}</td>
+                                              <td>{{ employee.joining_date }}</td>
+                                              <td>{{ employee.department_name }}</td>
+                                              <td>{{ employee.releiving_date }}</td>
+                                              <td>{{ employee.photocode }}</td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+      </div>
+
+      <!-- End of Footer -->
+      <app-footer></app-footer>
+
+  </div>
+  <!-- End of Content Wrapper -->

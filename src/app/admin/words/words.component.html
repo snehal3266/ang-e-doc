@@ -1,0 +1,60 @@
+<div id="wrapper">
+  <app-header></app-header>
+  <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+          <!-- Topbar -->
+          <app-topbar></app-topbar>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+              <!-- Page Heading -->
+              <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                  <h1 class="h3 mb-0 text-gray-800">Words
+                  </h1>
+                  <a class="btn btn-sm btn-success pull-right" routerLink="/admin/word/0">+ Word</a>
+              </div>
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="card shadow mb-12">
+                          <div class="card-body">
+                              <div class="table-responsive">
+                                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                      <thead>
+                                          <tr>
+                                              <th>Action</th>
+                                              <th>No</th>
+                                              <th>Keyword</th>
+                                              <th>Replace With</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let word of words;let i = index;">
+                                              <td>
+                                                  <a class="btn btn-sm btn-primary" routerLink="/admin/word/{{ word._id }}"><i class="fas fa-edit"></i></a>&nbsp;
+                                                  <button (click)="delete(word._id)" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                              </td>
+                                              <td>{{ (i + 1) }}</td>
+                                              <td>{{ word.keyword }}</td>
+                                              <td>{{ word.replacewith }}</td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+      </div>
+
+      <!-- End of Footer -->
+      <app-footer></app-footer>
+
+  </div>
+  <!-- End of Content Wrapper -->

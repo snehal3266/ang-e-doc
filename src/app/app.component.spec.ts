@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ang-e-doc'`, () => {
+  it(`should have as title 'edoc_angular'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ang-e-doc');
+    expect(app.title).toEqual('edoc_angular');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ang-e-doc app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('edoc_angular app is running!');
   });
 });
