@@ -1,3 +1,4 @@
+import { PrintdocumentComponent } from './printdocument/printdocument.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashbordComponent } from './admin/dashbord/dashbord.component';
@@ -19,7 +20,9 @@ const routes: Routes = [
   {path:"admin/employee/:id",component:EmployeeComponent},
   {path:"admin/words",component:WordsComponent},
   {path:"admin/employees",component:EmployeesComponent},
-  {path:"admin/topbar",component:TopbarComponent}
+  {path:"admin/topbar",component:TopbarComponent},
+  {path:"admin/printdocument/:eid/:did",component:PrintdocumentComponent}
+
 
 ];
 

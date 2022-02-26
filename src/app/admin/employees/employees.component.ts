@@ -11,13 +11,29 @@ import { CookieService } from 'src/app/cookie.service';
 export class EmployeesComponent implements OnInit {
 
   employees:any;
+  documents:any;
+  baseurl:string = this.api.baseurl;
 
   constructor(private api: ApiService, private cookie: CookieService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.list();
+    this.documentlist();
   }
+
+
+  documentlist()
+  {
+    let apiurl = "documents/list";
+    let data = this.api.post(apiurl, {});
+    data.subscribe((mydata: any) => {
+      this.documents= mydata.data;
+      console.log(this.documents);
+      this.list();
+    });
+  }
+
 
   list()
   {

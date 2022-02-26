@@ -28,6 +28,7 @@
                                               <th>Action</th>
                                               <th>No</th>
                                               <th>Employee_id</th>
+                                              <th>Picture</th>
                                               <th>Name</th>
                                               <th>Gender</th>
                                               <th>Birthdate</th>
@@ -45,9 +46,26 @@
                                               <td>
                                                   <a class="btn btn-sm btn-primary" routerLink="/admin/employee/{{ employee._id }}"><i class="fas fa-edit"></i></a>&nbsp;
                                                   <button (click)="delete(employee._id)" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                                              </td>
+                                                  <br />
+                                                  <br />
+                                                  <div class="btn-group">
+                                                      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Action
+                                                      </button>
+                                                      <div class="dropdown-menu">
+                                                          <a class="dropdown-item" *ngFor="let document of documents;" routerLink="/admin/printdocument/{{ employee._id}}/{{ document._id }}">{{ document.title }}</a>
+                                                      </div>
+                                                  </div>
+                                                </td>
                                               <td>{{ (i + 1) }}</td>
+
                                               <td>{{ employee.employee_id }}</td>
+
+                                                <td>
+                                                    <img src="{{ baseurl }}/{{ employee.imagepath }}" style="height:100px; width:auto;" />
+                                                </td>
+
+
                                               <td>{{ employee.name }}</td>
                                               <td>{{ employee.gender }}</td>
                                               <td>{{ employee.birthdate }}</td>

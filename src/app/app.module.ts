@@ -19,6 +19,7 @@ import { DocumentsComponent } from './admin/documents/documents.component';
 import { EmployeesComponent } from './admin/employees/employees.component';
 import { WordsComponent } from './admin/words/words.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { PrintdocumentComponent } from './printdocument/printdocument.component';
 
 
 
@@ -36,7 +37,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     DocumentsComponent,
     EmployeesComponent,
     WordsComponent,
-    SidebarComponent
+    SidebarComponent,
+    PrintdocumentComponent
   ],
   imports: [
     BrowserModule,

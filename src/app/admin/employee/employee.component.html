@@ -16,7 +16,7 @@
           <h1 class="h3 mb-0 text-gray-800"> <b> Employees </b></h1>
         </div>
 
-        <form class="row" [formGroup]="employee" (ngSubmit)="submit(employee.value)">
+        <form class="row" [formGroup]="employee" (ngSubmit)="submit(employee.value)" style="font-family: 'Times New Roman', Times, serif;">
           <input type="hidden" name="id" formControlName="id" />
           <div class="col-lg-12">
             employee_id
@@ -69,11 +69,19 @@
             <input type="date" class="form-control" name="releiving_date" formControlName="releiving_date" />
           </div> <br>
 
-          <div class="col-lg-12">
+          <div class="col-lg-4">
             photocode
-            <input type="text" class="form-control" name="photocode" formControlName="photocode" />
-          </div> <br>
-          
+            <input type="text" class="form-control" name="photocode" formControlName="photocode">
+        </div>
+        <br> <br>
+
+          <div class="col-lg-4">
+            Picture
+            <input type="file" id="emppic" class="form-control" accept="image/*" (change)="handleUpload($event)" />
+        </div>
+
+          <br>
+
           <div class="col-lg-12">
             <br />
             <input type="submit" value="Save" class="btn btn-success" />
